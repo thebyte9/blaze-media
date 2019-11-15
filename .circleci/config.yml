@@ -27,7 +27,7 @@ jobs: # a collection of steps
                 name: Install awscli
                 command: 'sudo apt-get install -y python-pip python-dev && sudo rm -rf /var/lib/apt/lists/* && sudo pip install awscli'
             - run:
-                name: Deploy to S3
+                name: Deploy Images to S3
                 command: aws s3 sync images/ s3://images.thisisblaze.com --delete --acl public-read
 workflows:
   version: 2
